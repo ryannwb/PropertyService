@@ -19,7 +19,7 @@ namespace PropertyService
             config.Routes.MapHttpRoute(
                 name: "CheckConnection",
                 routeTemplate: "api/{controller}",
-                defaults: new { controller = "checkconnetion" }
+                defaults: new { controller = "CheckConnection" }
                 );
                 
         }
