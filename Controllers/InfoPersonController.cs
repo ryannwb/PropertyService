@@ -47,6 +47,7 @@ namespace PropertyService.Controllers
             return person;
         }
 
+        [HttpPost]
         public string RegisterUser([FromBody] string person)
         {
             InfoPerson info = new JavaScriptSerializer().Deserialize<InfoPerson>(person);
