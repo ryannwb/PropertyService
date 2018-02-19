@@ -57,10 +57,12 @@ namespace PropertyService.Controllers
         }
 
         [HttpGet]
-        public string Method2()
+        public Message Method2()
         {
+            Message mess = new Message();
             string result = "Success Access";
-            return result;
+            mess.Text = result;
+            return mess;
         }
         //public InfoPerson AuthPerson(string user, string pass,string level)
         //{
@@ -85,7 +87,10 @@ namespace PropertyService.Controllers
 
         //    return info;
         //}
-
+        public class Message
+        {
+            public string Text { get; set; }
+        }
         public SqlDataReader OpenConnection(string syntax)
         {
             conn.Open();
