@@ -21,12 +21,14 @@ namespace PropertyService
                 routeTemplate: "api/{controller}",
                 defaults: new { controller = "CheckConnection" }
                 );
+
             config.Routes.MapHttpRoute(
                 name: "ApiVer1",
                 routeTemplate: "api/{controller}/{action}",
                 defaults: new { controller = "checkConnection", action = "GetAllConnection" }
                 );
                 
+
         }
     }
 }
