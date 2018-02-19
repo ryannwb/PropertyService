@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
+using System.Web.Mvc;
 
 namespace PropertyService
 {
@@ -25,7 +26,7 @@ namespace PropertyService
             config.Routes.MapHttpRoute(
                 name: "ApiVer1",
                 routeTemplate: "api/{controller}/{action}",
-                defaults: new { controller = "checkConnection", action = "GetAllConnection" }
+                defaults: new { controller = "checkConnection", action= UrlParameter.Optional }
                 );
                 
 
