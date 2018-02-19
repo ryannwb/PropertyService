@@ -17,16 +17,16 @@ namespace PropertyService
                 
             );
 
-            //config.Routes.MapHttpRoute(
-            //    name: "CheckConnection",
-            //    routeTemplate: "api/{controller}",
-            //    defaults: new { controller = "CheckConnection" }
-            //    );
+            config.Routes.MapHttpRoute(
+                name: "CheckConnection",
+                routeTemplate: "api/{controller}",
+                defaults: new { controller = "CheckConnection" }
+                );
 
             config.Routes.MapHttpRoute(
                 name: "ApiVer1",
-                routeTemplate: "api/{controller}/{category}",
-                defaults: new { controller = "checkConnection"}
+                routeTemplate: "api/{controller}/{id}",
+                defaults: new { controller = "checkConnection",id = RouteParameter.Optional}
                 );
                 
 
