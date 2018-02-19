@@ -7,6 +7,8 @@ using System.Web.Http;
 using PropertyService.Models;
 using System.Data.SqlClient;
 using System.Security.Cryptography;
+using System.Web.Script.Serialization;
+
 namespace PropertyService.Controllers
 {
     public class InfoPersonController : ApiController
@@ -45,7 +47,12 @@ namespace PropertyService.Controllers
             return person;
         }
 
-
+        public string RegisterUser([FromBody] string person)
+        {
+            InfoPerson info = new JavaScriptSerializer().Deserialize<InfoPerson>(person);
+            string result = "IDnya :" + info.ID + " Namanya: " + info.Name + " Phone1 : " + info.Phone1 + " Phone2 : " + info.Phone2 + " Email : " + info.Email + "";
+            return result;
+        }
         //public InfoPerson AuthPerson(string user, string pass,string level)
         //{
         //    InfoPerson info = new InfoPerson();
