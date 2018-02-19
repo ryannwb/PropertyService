@@ -26,7 +26,7 @@ namespace PropertyService
             config.Routes.MapHttpRoute(
                 name: "ApiVer1",
                 routeTemplate: "api/{controller}/{id}",
-                defaults: new { controller = UrlParameter.Optional ,id = UrlParameter.Optional}
+                defaults: new { id = UrlParameter.Optional}
                 );
                 
 
