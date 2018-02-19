@@ -17,6 +17,7 @@ namespace PropertyService.Controllers
         //InfoPerson infoperson = new InfoPerson();
         InfoPerson[] person =  new InfoPerson[]{};
 
+        [HttpGet]
         public IEnumerable<InfoPerson> GetAllPerson()
         {
             SyntaxSQL syntaxsql = new SyntaxSQL();
