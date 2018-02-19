@@ -28,7 +28,12 @@ namespace PropertyService
                 routeTemplate: "api/{controller}/{id}",
                 defaults: new { id = UrlParameter.Optional}
                 );
-                
+
+            config.Routes.MapHttpRoute(
+                name: "getMethod2",
+                routeTemplate: "api/{controller}/{id}",
+                defaults: new { id = "GetMethod2" }
+                );
 
         }
     }
