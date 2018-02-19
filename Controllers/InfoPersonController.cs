@@ -54,6 +54,13 @@ namespace PropertyService.Controllers
             string result = "IDnya :" + info.ID + " Namanya: " + info.Name + " Phone1 : " + info.Phone1 + " Phone2 : " + info.Phone2 + " Email : " + info.Email + "";
             return result;
         }
+
+        [HttpGet]
+        public string Method2()
+        {
+            string result = "Success Access";
+            return result;
+        }
         //public InfoPerson AuthPerson(string user, string pass,string level)
         //{
         //    InfoPerson info = new InfoPerson();
