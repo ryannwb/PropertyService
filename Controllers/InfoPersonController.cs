@@ -57,36 +57,15 @@ namespace PropertyService.Controllers
         }
 
         [HttpGet]
-        public Message GetMethod2()
+        [AcceptVerbs("MKCOL")]
+        public Message GetMethod2(int id)
         {
             Message mess = new Message();
             string result = "Success Access";
             mess.Text = result;
             return mess;
         }
-        //public InfoPerson AuthPerson(string user, string pass,string level)
-        //{
-        //    InfoPerson info = new InfoPerson();
-        //    SyntaxSQL syntaxsql = new SyntaxSQL();
-
-        //    syntaxsql.SettingSignIn(user,pass,level);
-
-        //    string sysSignIn = syntaxsql.SyntaxSignIn;
-        //    SqlDataReader rd = OpenConnection(sysSignIn);
-
-        //    if (rd.HasRows)
-        //    {
-        //        info.ID = Convert.ToInt16(rd["IDPerson"].ToString());
-        //        info.Name = rd["Fullname"].ToString();
-        //        info.Phone1 = rd["NoHP1"].ToString();
-        //        info.Phone2 = rd["NoHP2"].ToString();
-        //        info.Email = rd["Email"].ToString();
-        //        info.Username = rd["UserID"].ToString();
-        //        info.Level = rd["UserLevel"].ToString();
-        //    }
-
-        //    return info;
-        //}
+       
         public class Message
         {
             public string Text { get; set; }
