@@ -57,7 +57,7 @@ namespace PropertyService.Controllers
         }
 
         [HttpGet]
-        public Message GetMethod2()
+        public Message GetMethod2(string name)
         {
             Message mess = new Message();
             string result = "Success Access";

@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
+using System.Web.Http.Dispatcher;
+using System.Web.Http.WebHost;
 using System.Web.Mvc;
 
 namespace PropertyService
@@ -10,6 +12,9 @@ namespace PropertyService
     {
         public static void Register(HttpConfiguration config)
         {
+            //customize your route
+            //var config = GlobalConfiguration.Configuration;
+            //config.Services.Replace(typeof(IHttpControllerSelector), new MyControllerSelector(config));
 
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",
@@ -25,15 +30,9 @@ namespace PropertyService
                 );
 
             config.Routes.MapHttpRoute(
-                name: "ApiVer1",
-                routeTemplate: "api/{controller}/{id}",
-                defaults: new { id = UrlParameter.Optional}
-                );
-
-            config.Routes.MapHttpRoute(
-                name: "getMethod2",
-                routeTemplate: "api/{controller}/{id}",
-                defaults: new { id = "GetMethod2" }
+                name: "GetMethod2",
+                routeTemplate: "api/infoperson/{name}",
+                defaults: new { controller = "InfoPerson", name = UrlParameter.Optional}
                 );
 
         }
