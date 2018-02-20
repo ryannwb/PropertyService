@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
-using System.Net.Http;
+//using System.Net.Http;
 using System.Web.Http;
 using PropertyService.Models;
 using System.Data.SqlClient;
@@ -48,14 +48,15 @@ namespace PropertyService.Controllers
             return person;
         }
 
-
+        
         [HttpPost]
         public string RegisterUser([FromBody] InfoPerson person)
         {
             //InfoPerson info = new JavaScriptSerializer().Deserialize<InfoPerson>(person);
             //InfoPerson info = person;
             //string result = "IDnya :" + info.ID + " Namanya: " + info.Name + " Phone1 : " + info.Phone1 + " Phone2 : " + info.Phone2 + " Email : " + info.Email + "";
-            return person.Name;
+            string result = person.Name;
+            return result;
         }
 
         [NonAction]
