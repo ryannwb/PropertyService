@@ -48,10 +48,12 @@ namespace PropertyService.Controllers
             return person;
         }
 
+
         [HttpPost]
-        public string RegisterUser([FromBody] string person)
+        public string RegisterUser([FromBody] InfoPerson person)
         {
-            InfoPerson info = new JavaScriptSerializer().Deserialize<InfoPerson>(person);
+            //InfoPerson info = new JavaScriptSerializer().Deserialize<InfoPerson>(person);
+            InfoPerson info = person;
             string result = "IDnya :" + info.ID + " Namanya: " + info.Name + " Phone1 : " + info.Phone1 + " Phone2 : " + info.Phone2 + " Email : " + info.Email + "";
             return result;
         }
@@ -64,29 +66,6 @@ namespace PropertyService.Controllers
             mess.Text = result;
             return mess;
         }
-        //public InfoPerson AuthPerson(string user, string pass,string level)
-        //{
-        //    InfoPerson info = new InfoPerson();
-        //    SyntaxSQL syntaxsql = new SyntaxSQL();
-
-        //    syntaxsql.SettingSignIn(user,pass,level);
-
-        //    string sysSignIn = syntaxsql.SyntaxSignIn;
-        //    SqlDataReader rd = OpenConnection(sysSignIn);
-
-        //    if (rd.HasRows)
-        //    {
-        //        info.ID = Convert.ToInt16(rd["IDPerson"].ToString());
-        //        info.Name = rd["Fullname"].ToString();
-        //        info.Phone1 = rd["NoHP1"].ToString();
-        //        info.Phone2 = rd["NoHP2"].ToString();
-        //        info.Email = rd["Email"].ToString();
-        //        info.Username = rd["UserID"].ToString();
-        //        info.Level = rd["UserLevel"].ToString();
-        //    }
-
-        //    return info;
-        //}
         public class Message
         {
             public string Text { get; set; }
