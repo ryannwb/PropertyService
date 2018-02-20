@@ -48,6 +48,8 @@ namespace PropertyService.Controllers
             return person;
         }
 
+        [HttpPost]
+        [AllowAnonymous]
         public string Post([FromBody] InfoPerson person)
         {
             //InfoPerson info = new JavaScriptSerializer().Deserialize<InfoPerson>(person);
