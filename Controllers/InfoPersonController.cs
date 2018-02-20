@@ -50,7 +50,7 @@ namespace PropertyService.Controllers
 
         
         [HttpPost]
-        public string RegisterUser([FromBody] InfoPerson person)
+        public string PostRegisterUser([FromBody] InfoPerson person)
         {
             //InfoPerson info = new JavaScriptSerializer().Deserialize<InfoPerson>(person);
             //InfoPerson info = person;
