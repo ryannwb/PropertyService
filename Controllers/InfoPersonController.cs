@@ -50,26 +50,15 @@ namespace PropertyService.Controllers
 
 
         [HttpPost]
-        public string RegisterUser([FromBody] string person)
+        public string RegisterUser([FromBody] InfoPerson person)
         {
             //InfoPerson info = new JavaScriptSerializer().Deserialize<InfoPerson>(person);
             //InfoPerson info = person;
             //string result = "IDnya :" + info.ID + " Namanya: " + info.Name + " Phone1 : " + info.Phone1 + " Phone2 : " + info.Phone2 + " Email : " + info.Email + "";
-            return person;
+            return person.Name;
         }
 
-        [HttpGet]
-        public Message GetMethod2(string name)
-        {
-            Message mess = new Message();
-            string result = "Success Access";
-            mess.Text = result;
-            return mess;
-        }
-        public class Message
-        {
-            public string Text { get; set; }
-        }
+        [NonAction]
         public SqlDataReader OpenConnection(string syntax)
         {
             conn.Open();
@@ -78,6 +67,7 @@ namespace PropertyService.Controllers
             return result;
         }
 
+        [NonAction]
         public string DecryptePass(string pass, string mess)
         {
             byte[] Results;
@@ -118,6 +108,7 @@ namespace PropertyService.Controllers
             return UTF8.GetString(Results);
         }
 
+        [NonAction]
         public string EncryptPass(string pass, string mess)
         {
             byte[] Results;
