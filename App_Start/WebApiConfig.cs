@@ -20,7 +20,6 @@ namespace PropertyService
                 name: "DefaultApi",
                 routeTemplate: "api/{controller}/{action}/{id}",
                 defaults: new { controller = "CheckConnection" ,id = UrlParameter.Optional }
-                
             );
 
         }
