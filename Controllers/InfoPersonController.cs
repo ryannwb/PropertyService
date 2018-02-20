@@ -57,7 +57,7 @@ namespace PropertyService.Controllers
         }
 
         [HttpGet]
-        [AcceptVerbs("MKCOL")]
+        [Route("api/infoperson/getmethod2")]
         public Message GetMethod2(int id)
         {
             Message mess = new Message();
