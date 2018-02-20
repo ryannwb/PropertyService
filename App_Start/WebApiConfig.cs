@@ -18,7 +18,7 @@ namespace PropertyService
 
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",
-                routeTemplate: "api/{controller}/{id}",
+                routeTemplate: "api/{controller}/{action}/{id}",
                 defaults: new { controller = "CheckConnection" ,id = UrlParameter.Optional }
                 
             );
