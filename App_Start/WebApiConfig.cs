@@ -19,21 +19,9 @@ namespace PropertyService
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",
                 routeTemplate: "api/{controller}/{id}",
-                defaults: new { id = RouteParameter.Optional }
+                defaults: new { controller = "CheckConnection" ,id = UrlParameter.Optional }
                 
             );
-
-            config.Routes.MapHttpRoute(
-                name: "CheckConnection",
-                routeTemplate: "api/{controller}",
-                defaults: new { controller = "CheckConnection" }
-                );
-
-            config.Routes.MapHttpRoute(
-                name: "GetMethod2",
-                routeTemplate: "api/infoperson/{name}",
-                defaults: new { controller = "InfoPerson", name = UrlParameter.Optional}
-                );
 
         }
     }
